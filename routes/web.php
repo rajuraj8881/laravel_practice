@@ -20,3 +20,5 @@ Route::get('/mt/{a}', 'CalcController@multiplicationTable');
 Route::get('/persons', 'PersonController@getPersons');
 
 Route::get('/transfer/{amount}-{n1}-{n2}', 'PersonController@transferBalance');
+
+Route::get('/add/{name}={amount}', 'PersonController@addBalance');

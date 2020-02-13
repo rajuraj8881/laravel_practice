@@ -44,4 +44,14 @@ class PersonController extends Controller
         echo $p2->name . " has " . $p2->balance . " Taka ";
         echo "<br/>";
     }
+
+    public function addBalance($name, $amount)
+    {
+        $p = Person::where('name', $name)->firstOrFail();
+        $p->balance += $amount;
+
+        $p->save();
+
+        echo $amount . ' added successfully to ' . $p->name;
+    }
 }
