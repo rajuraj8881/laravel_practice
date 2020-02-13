@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/calc/{o}={a}&{b}', 'CalcController@calculator');
 
 Route::get('/mt/{a}', 'CalcController@multiplicationTable');
+
+Route::get('/persons', 'PersonController@getPersons');
+
+Route::get('/transfer/{amount}-{n1}-{n2}', 'PersonController@transferBalance');
