@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use Illuminate\Support\Facades\Route;
+
+Route::get('/calc/{a}&{b}',function ($a, $b){
+    echo $a." + ".$b." = ".($a + $b);
+    echo "<br/>";
+    echo $a." - ".$b." = ".($a - $b);
+    echo "<br/>";
+    echo $a." * ".$b." = ".($a * $b);
+    echo "<br/>";
+    echo $a." / ".$b." = ".($a / $b);
 });
