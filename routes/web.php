@@ -30,3 +30,10 @@ Route::get('/calc/{o}={a}&{b}', function ($o, $a, $b) {
     }
 
 });
+
+Route::get('/mt/{a}', function ($a) {
+    for ($i = 1; $i <= 10; $i++) {
+        echo $a . " * " . $i . " = " . ($a * $i);
+        echo "<br/>";
+    }
+});
