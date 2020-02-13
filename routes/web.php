@@ -13,27 +13,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/calc/{o}={a}&{b}', function ($o, $a, $b) {
-    if ($o == "add") {
-        echo $a . " + " . $b . " = " . ($a + $b);
-        echo "<br/>";
-    } else if ($o == "sub") {
-        echo $a . " - " . $b . " = " . ($a - $b);
-        echo "<br/>";
-    } else if ($o == "mul") {
-        echo $a . " * " . $b . " = " . ($a * $b);
-        echo "<br/>";
-    } else if ($o == "div") {
-        echo $a . " / " . $b . " = " . ($a / $b);
-    } else {
-        echo "Invalid Operator ";
-    }
+Route::get('/calc/{o}={a}&{b}', 'CalcController@calculator');
 
-});
-
-Route::get('/mt/{a}', function ($a) {
-    for ($i = 1; $i <= 10; $i++) {
-        echo $a . " * " . $i . " = " . ($a * $i);
-        echo "<br/>";
-    }
-});
+Route::get('/mt/{a}', 'CalcController@multiplicationTable');
