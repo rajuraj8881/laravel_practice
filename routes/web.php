@@ -13,12 +13,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/calc/{a}&{b}',function ($a, $b){
-    echo $a." + ".$b." = ".($a + $b);
-    echo "<br/>";
-    echo $a." - ".$b." = ".($a - $b);
-    echo "<br/>";
-    echo $a." * ".$b." = ".($a * $b);
-    echo "<br/>";
-    echo $a." / ".$b." = ".($a / $b);
+Route::get('/calc/{o}={a}&{b}', function ($o, $a, $b) {
+    if ($o == "add") {
+        echo $a . " + " . $b . " = " . ($a + $b);
+        echo "<br/>";
+    } else if ($o == "sub") {
+        echo $a . " - " . $b . " = " . ($a - $b);
+        echo "<br/>";
+    } else if ($o == "mul") {
+        echo $a . " * " . $b . " = " . ($a * $b);
+        echo "<br/>";
+    } else if ($o == "div") {
+        echo $a . " / " . $b . " = " . ($a / $b);
+    } else {
+        echo "Invalid Operator ";
+    }
+
 });
